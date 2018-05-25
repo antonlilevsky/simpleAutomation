@@ -1,6 +1,7 @@
 package controls;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 public class Input extends ControlBase {
 
@@ -28,4 +29,5 @@ public class Input extends ControlBase {
         getWebElement().clear();
         getWebElement().sendKeys(text);
     }
+
 }

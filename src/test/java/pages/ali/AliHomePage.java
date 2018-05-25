@@ -33,8 +33,6 @@ public class AliHomePage extends BasePage {
     @FindBy(xpath = "//a[contains(text(), 'Men') and contains(text(),'Backpacks')]")
     private WebElement mensBackpacksSubCategory;
 
-    Actions actions = new Actions(driver);
-
     private String URL = "https://www.aliexpress.com/";
 
     public AliHomePage open() {
@@ -45,7 +43,7 @@ public class AliHomePage extends BasePage {
     }
 
     public AliLoginPage openLogin() {
-        actions.moveToElement((WebElement) signInButton).build().perform();
+        moveMouseToElement((WebElement) signInButton);
         if (!isElementVisible(secondSignInButton.getDescription())) {
             signInButton.click();
             secondSignInButton.click();
@@ -84,7 +82,5 @@ public class AliHomePage extends BasePage {
         return new MensBackpacksPage();
     }
 
-    public void moveMouseToElement(WebElement element) {
-        actions.moveToElement(element).build().perform();
-    }
+
 }

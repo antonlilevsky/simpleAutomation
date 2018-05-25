@@ -1,9 +1,10 @@
 package tests;
 
 import org.junit.Test;
-import pages.GoogleSearchPage;
-import pages.GoogleSearchResultsPage;
+import pages.google.GoogleSearchPage;
+import pages.google.GoogleSearchResultsPage;
 import pages.ali.AliHomePage;
+import pages.ali.MensBackpacksPage;
 
 public class simpleTest extends BaseTest {
 
@@ -17,7 +18,7 @@ public class simpleTest extends BaseTest {
     @Test
     public void test2() {
         GoogleSearchResultsPage page = new GoogleSearchResultsPage();
-        page.open("aliexpress");
+        page.searchFor("aliexpress");
     }
 
     @Test
@@ -29,6 +30,8 @@ public class simpleTest extends BaseTest {
     @Test
     public void test4() {
         AliHomePage aliHomePage = new AliHomePage();
-        aliHomePage.open().openMensBackpacksPage();
+        MensBackpacksPage backpacksPage = aliHomePage.open().openMensBackpacksPage();
+        //backpacksPage
+
     }
 }

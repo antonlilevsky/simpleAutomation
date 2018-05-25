@@ -4,6 +4,7 @@ import core.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,6 +13,8 @@ import java.util.List;
 
 public class BasePage {
     protected static WebDriver driver;
+
+    Actions actions = new Actions(driver);
 
     public BasePage() {
         driver = Driver.get();
@@ -62,6 +65,10 @@ public class BasePage {
     public boolean isElementVisible(By element) {
         List<WebElement> elList = driver.findElements(element);
         return !elList.isEmpty() && elList.get(0).isDisplayed();
+    }
+
+    public void moveMouseToElement(WebElement element) {
+        actions.moveToElement(element).build().perform();
     }
 
 

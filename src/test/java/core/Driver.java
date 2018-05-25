@@ -36,6 +36,7 @@ public class Driver {
 
         switch (browserName) {
             case "chrome":
+            default:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;

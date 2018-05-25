@@ -4,8 +4,9 @@ import controls.Button;
 import controls.Input;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
+import pages.BasePage;
 
-public class MensBackpacksPage {
+public class MensBackpacksPage extends BasePage{
 
     @FindBy(xpath = "//input[@name=\"minPrice\"]")
     private Input minPrice;
@@ -22,7 +23,7 @@ public class MensBackpacksPage {
         Brands(final String text) {
             this.text = text;
         }
-
+//          TODO: understand what is this s**t here for??
 //        public static Brands getStatusFromString(final String candidateStatus) throws Exception {
 //            for (Brands enam : Brands.values()) {
 //                if (enam.toString().equals(candidateStatus)) {
