@@ -1,7 +1,6 @@
-package core;
+package tests;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import pages.GoogleSearchPage;
 import pages.GoogleSearchResultsPage;
 import pages.ali.AliHomePage;

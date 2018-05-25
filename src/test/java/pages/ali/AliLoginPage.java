@@ -2,7 +2,6 @@ package pages.ali;
 
 import controls.Button;
 import controls.Input;
-import core.BaseTest;
 import org.openqa.selenium.By;
 import pages.BasePage;
 

@@ -21,8 +21,15 @@ public class AliHomePage extends BasePage {
 
     public AliLoginPage openLogin() {
         actions.moveToElement(signInButton().getWebElement()).build().perform();
-        waitForElementVisible(secondSignInButton().getWebElement());
-        signInButton().click();
+
+        if (!isElementVisible(secondSignInButton().getDescription())) {
+            signInButton().click();
+            secondSignInButton().click();
+        } else {
+            waitForElementVisible(secondSignInButton().getWebElement());
+            signInButton().click();
+        }
+
         return new AliLoginPage();
     }
 
@@ -35,8 +42,13 @@ public class AliHomePage extends BasePage {
 
     public MensBackpacksPage openMensBackpacksPage() {
         moveMouseToElement(categoriesMainContainer());
-        waitForElementVisible(bagsAndShoesCategory());
-        moveMouseToElement(bagsAndShoesCategory());
+        if (!bagsAndShoesCategory().isDisplayed()) {
+            categoriesMainContainer().click();
+            bagsAndShoesCategory().click();
+        } else {
+            waitForElementVisible(bagsAndShoesCategory());
+            moveMouseToElement(bagsAndShoesCategory());
+        }
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
