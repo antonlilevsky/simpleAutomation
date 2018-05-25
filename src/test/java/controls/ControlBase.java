@@ -1,6 +1,5 @@
 package controls;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import core.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public abstract class ControlBase {
     static WebDriver driver = Driver.get();
+
     By element;
 
     public WebElement getWebElement() {
@@ -16,6 +16,10 @@ public abstract class ControlBase {
 
     public By getDescription() {
         return element;
+    }
+
+    public void click() {
+        driver.findElement(element).click();
     }
 
     //TODO

@@ -3,15 +3,10 @@ package controls;
 import org.openqa.selenium.By;
 
 public class Input extends ControlBase {
-//    private static By element;
-
 
     public Input(By by) {
         element = by;
     }
-
-
-
 
     public static Input byId(String id) {
         return new Input(By.xpath(String.format("//*[@id='%s']", id)));
@@ -30,9 +25,7 @@ public class Input extends ControlBase {
     }
 
     public void setText(String text) {
-        driver.findElement(element).clear();
-        driver.findElement(element).sendKeys(text);
+        getWebElement().clear();
+        getWebElement().sendKeys(text);
     }
-
-
 }

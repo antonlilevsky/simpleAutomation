@@ -58,4 +58,11 @@ public class BasePage {
         List<WebElement> elList = driver.findElements(element);
         return !elList.isEmpty();
     }
+
+    public boolean isElementVisible(By element) {
+        List<WebElement> elList = driver.findElements(element);
+        return !elList.isEmpty() && elList.get(0).isDisplayed();
+    }
+
+
 }

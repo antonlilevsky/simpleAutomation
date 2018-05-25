@@ -20,11 +20,4 @@ public class Button extends ControlBase {
     public static Button ByLocator(By locator) {
         return new Button(locator);
     }
-
-    public Button click() {
-        driver.findElement(element).click();
-        return new Button(element);
-    }
-
-
 }

@@ -1,6 +1,6 @@
-package core;
+package tests;
 
-import org.junit.AfterClass;
+import core.Driver;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 

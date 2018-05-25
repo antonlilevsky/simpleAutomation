@@ -2,12 +2,12 @@ package pages.ali;
 
 import controls.Button;
 import controls.Input;
-import core.BaseTest;
 import org.openqa.selenium.By;
 import pages.BasePage;
 
 public class AliLoginPage extends BasePage {
 
+    private String loginFrameId = "alibaba-login-box";
 
     public void login(){
         driver.switchTo().frame(loginFrameId);
@@ -22,12 +22,13 @@ public class AliLoginPage extends BasePage {
     }
 
     private Input passwordField() {
-        return new Input( By.xpath("//input[@id=\"fm-login-password\"]"));
+        return Input.byXpath( "//input[@id=\"fm-login-password\"]");
+//        return Input.create().byXpath(...);
     }
 
     private Button submitButton() {
         return new Button( By.xpath("//input[@id='fm-login-submit']"));
     }
 
-    private String loginFrameId = "alibaba-login-box";
+
 }
